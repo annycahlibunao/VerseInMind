@@ -1,0 +1,144 @@
+html, body {
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    font-family: "Lexend", sans-serif;
+    background-color: #ffffff;
+    overflow: hidden; 
+}
+
+#main-cont {
+    margin-left: 2vw;
+    width: 100%;
+}
+
+
+#main-cont h4 {
+    color: black;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+a {
+    color: #ffa25c;
+    text-decoration: none;
+}
+
+#name-cont {
+    display: flex;
+    max-width: 550px;
+    width: 100%;
+}
+
+input {
+    font-family: "Lexend", sans-serif;
+    color: black;
+    font-weight: 400;
+}
+
+.login-details {
+    background-color: #e4e1dc;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 550px;
+}
+
+.login-details::placeholder {
+    font-family: "Lexend", sans-serif;
+    color: #a2a19f;
+    font-size: 1vw;
+}
+
+.login-details:-webkit-autofill {
+    background-color: #a2a19f !important; /* Match the original background */
+    -webkit-text-fill-color: black !important; /* Ensure text color remains white */
+    transition: background-color 5000s ease-in-out 0s; /* Prevents default background override */
+}
+
+#lname-input {
+    margin-left: 20px;
+}
+
+#email-input {
+    margin-top: 17px;
+}
+
+#password-input {
+    margin-top: 17px;
+}
+
+#submit-btn {
+    font-family: "Lexend", sans-serif;
+    border: none;
+    background-color: #ffa25c;
+    color: white;
+    margin-top: 40px;   
+    transition: 0.3s;
+    font-size: 1vw;
+}
+
+#submit-btn:hover {
+    background-color: #ff8529;
+}
+
+@media screen and (max-width: 1500px) {
+    #main-cont {
+        padding: 7vw;
+    }
+
+    #main-cont h1 {
+        font-size: 4vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    #main-cont h4 {
+        font-size: 1.3vw;
+        margin-top: 10px;
+        padding: 0;
+    }
+
+    .login-details {
+        padding: 1.3vw;
+        border-radius: 15px;
+    }
+    
+    #submit-btn {
+        padding: 1.7vw;
+        width: 20vw;
+        border-radius: 30px;
+    }
+}
+
+@media screen and (min-width: 1501px) {
+    #main-cont {
+        padding: 7.5vw;
+    }
+
+    #main-cont h1 {
+        font-size: 4.5vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    #main-cont h4 {
+        font-size: 1.5vw;
+        margin-top: 10px;
+        padding: 0;
+    }
+
+    .login-details {
+        padding: 1.4vw;
+        border-radius: 15px;
+    }
+
+    #submit-btn {
+        padding: 1.9vw;
+        width: 17vw;
+        border-radius: 50px;
+    }
+}
