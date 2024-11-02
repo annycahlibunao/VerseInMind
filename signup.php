@@ -14,7 +14,8 @@
         <div id="main-cont"> 
             <h1>Welcome to VerseInMind<span style="color: #ffa25c">.</span></h1>
             <h4>Already have an account? <a href="login.php">Log In</a></h4>
-            <form name="login-form" action="index.php" method="GET">
+            <form name="form-type" action="index.php" method="GET">
+                <input type="hidden" name="form-type" value="signup">
                 <div id="name-cont">
                     <input type="text" name="firstname" id="fname-input" class="login-details" placeholder="First name" required><br>
                     <input type="text" name="lastname" id="lname-input" class="login-details" placeholder="Last name" required><br>
