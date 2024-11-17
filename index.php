@@ -40,11 +40,12 @@
                 if ($password_input === $stored_password) {
                     echo "Login successful!";  
                 } else {
-                    echo "Invalid password.";  
+                    header("Location: login.php?error=Please enter the correct password.");
+                    exit;
                 }
             } else {
-                echo "Email not found.";  
-            }
+                header("Location: login.php?error=Please enter the correct email.");
+                exit;            }
         }
     }
 

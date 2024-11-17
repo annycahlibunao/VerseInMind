@@ -1,6 +1,9 @@
 <?php 
+
     $cookie_email = isset($_COOKIE["cookie_email"]) ? $_COOKIE["cookie_email"] : "";
     $cookie_password = isset($_COOKIE["cookie_password"]) ? $_COOKIE["cookie_password"] : "";
+    $error_msg = isset($_GET["error"]) ? $_GET["error"] : "";
+
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +26,7 @@
                 <input type="hidden" name="form-type" value="login">
                 <input type="text" name="email" id="email-input" class="login-details" placeholder="Email" value="<?php echo $cookie_email?>" required><br>
                 <input type="text" name="password" id="password-input" class="login-details" placeholder="Password" value="<?php echo $cookie_password?>" required><br>
+                <p id="error-msg"><?php echo $error_msg; ?></p>
                 <input type="submit" id="submit-btn" value="Log in">
             </form>
         </div>

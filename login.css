@@ -56,12 +56,17 @@ input {
     margin-top: 17px;
 }
 
+#error-msg {
+    color: red;
+    font-weight: 400;
+}
+
 #submit-btn {
     font-family: "Lexend", sans-serif;
     border: none;
     background-color: #ffa25c;
     color: white;
-    margin-top: 40px;   
+    margin-top: 20px;   
     transition: 0.3s;
     font-size: 1vw;
 }
