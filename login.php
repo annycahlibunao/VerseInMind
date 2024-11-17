@@ -16,7 +16,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
         <link rel="icon" type="image/png" href="images/webicon.png">
-        <title>To-do List</title>
+        <title>VerseInMind</title>
     </head>
     <body>  
     <div id="main-cont"> 
