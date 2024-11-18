@@ -18,6 +18,7 @@
                 <a href="memorise.php" id="memorise-link">Memorise</a>
                 <a href="profile.php" id="profile-link">Profile</a>
             </ul>
+            <a href="login.php" id="logout-link">Logout</a>
         </nav>
     </body>
 </html>
