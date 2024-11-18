@@ -59,11 +59,9 @@
 }
 
 #sidebar #logout-link a:hover {
-    color: white;
-    background-color: #ffa25c;
-    border-radius: 3vw;
+    color: #ffa25c;
     svg {
-        fill: white;
+        fill: #ffa25c;
     }
 }
 
