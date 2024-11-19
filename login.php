@@ -11,7 +11,6 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="login.css">
-        <!--<script src="js/index.js" defer></script>-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
@@ -19,7 +18,7 @@
         <title>VerseInMind</title>
     </head>
     <body>  
-    <div id="main-cont"> 
+        <div id="main-cont"> 
             <h1>Welcome back<span style="color: #ffa25c">.</span></h1>
             <h4>Don't have an account? <a href="signup.php">Sign Up</a></h4>
             <form name="form" action="index.php" method="GET">

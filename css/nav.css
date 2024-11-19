@@ -18,8 +18,8 @@
 
 #sidebar #site-name {
     font-weight: 600;
-    font-size: 1.9vw;
-    margin-bottom: 2vw;
+    font-size: 2vw;
+    margin-bottom: 3vw;
 }
 
 #sidebar ul li.active a{
@@ -30,38 +30,25 @@
 }
 
 #sidebar ul li a:hover {
-    color: #ffa25c;
+    background-color: black;
+    color: white;
     svg {
-        fill: #ffa25c;
+        fill: white;
     }
 }
 
 #sidebar a{
     border-radius: 0.5vw;
+    font-size: 1.3vw;
     padding: 1vw;
     text-decoration: none;
-    color: black;
+    color: #a2a19f;
     display: flex;
     align-items: center;
     gap: 1.5vw;
-    transition: 0.3s;
-}
-
-#sidebar #logout-link {
-    margin-top: auto;
-    margin-bottom: 2vw;
-    text-decoration: none;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-}
-
-#sidebar #logout-link a:hover {
-    color: #ffa25c;
+    margin-bottom: 0.4vw;
     svg {
-        fill: #ffa25c;
+        fill: #a2a19f;
     }
 }
 
