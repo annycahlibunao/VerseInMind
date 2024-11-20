@@ -7,6 +7,109 @@ html, body {
 
 body {
     display: grid;
-    grid-template-columns: auto 1fr; 
-    min-height: 100vh; 
+    grid-template-columns: auto 6px 1fr; /* Three columns: sidebar, vertical line, main content */
+    min-height: 100vh; /* Full viewport height */
 }
+
+#vertical-line {
+    background-color: #efece9; 
+    width: 2px; 
+    height: 90%;
+    margin-left: 2vw;
+    margin-top: 2.5vw;
+}
+
+main {
+    padding: min(30px, 7%);
+}
+
+#cont-one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-title {
+    font-weight: 500;
+    font-size: 3vw;
+    margin-top: 0.6vw;
+    margin-left: 3.5vw;
+}
+
+#add-verse-btn {
+    font-family: "Lexend", sans-serif;
+    background-color: #ffa25c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 2.1vw;
+    padding: 1.3vw;
+    font-size: 1.1vw;
+    gap: 0.5vw;
+    transition: 0.3s;
+    float: right;
+    margin-right: 1.5vw;
+}
+
+#add-verse-btn:hover {
+    background-color: #ff8529;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}  
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 2vw;
+    width: 50%; 
+    border-radius: 1.5vw;
+}
+
+#modal-cont-one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-content #add-modal-title {
+    font-weight: 500;
+    margin: 0;
+    font-size: 1.7vw;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 1.7vw;
+    font-weight: bold;
+}
+  
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#cont-two-modal {
+    margin-top: 2vw;
+}
+
+#cont-two-modal p {
+    font-weight: 500;
+}
+
+
+

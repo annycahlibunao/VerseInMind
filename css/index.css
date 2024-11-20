@@ -7,7 +7,26 @@ html, body {
 
 body {
     display: grid;
-    grid-template-columns: auto 1fr; 
+    grid-template-columns: auto 6px 1fr; 
     min-height: 100vh; 
+}
+
+#vertical-line {
+    background-color: #efece9; 
+    width: 2px; 
+    height: 90%;
+    margin-left: 2vw;
+    margin-top: 2.5vw;
+}
+
+main {
+    padding: min(30px, 7%);
+}
+
+#main-title {
+    font-weight: 500;
+    font-size: 3vw;
+    margin-top: 0.6vw;
+    margin-left: 3.5vw;
 }
 

@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/memorise.css">
         <link rel="stylesheet" href="../css/nav.css">
+        <script src="../js/memorise.js" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
@@ -18,12 +19,6 @@
                     <a href="../index.php">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>                    
                     <span>Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="add.php">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h360v80H200v560h560v-360h80v360q0 33-23.5 56.5T760-120H200Zm120-160v-80h320v80H320Zm0-120v-80h320v80H320Zm0-120v-80h320v80H320Zm360-80v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z"/></svg>                    
-                    <span>Add</span>
                     </a>
                 </li>
                 <li class="active">
@@ -46,7 +41,28 @@
                 </li>
             </ul>
         </nav>
-    </body>
+        <div id="vertical-line"></div>
+        <main>
+            <div id="cont-one">
+                <h1 id="main-title">Memorise</h1>
 
-    
+                <button id="add-verse-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                    <span>Add A Verse</span>
+                </button>
+                <div id="add-verse-modal" class="modal">
+                    <div class="modal-content">
+                        <div id="cont-one-modal">
+                            <span class="close">&times;</span>
+                            <h3 id="add-modal-title">Add A Verse</h3>
+                        </div>
+                        <div id="cont-two-modal">
+                            <p>Version</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
 </html>
