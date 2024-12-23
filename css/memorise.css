@@ -104,11 +104,39 @@ main {
 }
 
 #cont-two-modal {
-    margin-top: 2vw;
+    margin-top: 2.5vw;
 }
 
 #cont-two-modal p {
     font-weight: 500;
 }
 
+#cont-two-modal .column {
+    width: 32%;
+    display: inline-block;
+}
 
+#cont-two-modal select {
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    font-size: 1.05vw;
+    color: #a2a19f;
+    border: 0.2vw solid #efece9;
+    border-radius: 1vw;
+    padding: 1vw;
+    padding-right: 5vw;
+    margin-top: 0.7vw;
+    appearance: none;
+}
+
+#cont-two-modal option:not(:first-of-type) {
+    color: black;
+}
+
+#verse-option, #verse-label{
+    margin-left: -0.5vw;
+}
+
+#cont-two-modal option {
+    font-size: 1.05vw;
+}

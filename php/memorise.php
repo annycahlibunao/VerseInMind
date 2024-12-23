@@ -56,20 +56,26 @@
                             <h3 id="add-modal-title">Add A Verse</h3>
                         </div>
                         <div id="cont-two-modal">
-                            <label for="book-option">Book</label>
-                            <select name="book-option" id="book-option">
-                            <option value="" selected="selected">Select Book</option>
-                            </select>
+                            <div class="column">
+                                <label for="book-option" id="book-label">Book</label><br>
+                                <select name="book-option" id="book-option">
+                                <option value="" selected="selected">Select Book</option>
+                                </select>
+                            </div>
 
-                            <label for="chapter-option">Chapter</label>
-                            <select name="chapter-option" id="chapter-option">
-                            <option value="" selected="selected">Select Chapter</option>
-                            </select>
+                            <div class="column">
+                                <label for="chapter-option" id="chapter-label">Chapter</label><br>
+                                <select name="chapter-option" id="chapter-option">
+                                <option value="" selected="selected">Select Chapter</option>
+                                </select>
+                            </div>  
 
-                            <label for="verse-option">Verse</label>
-                            <select name="verse-option" id="verse-option">
-                            <option value="" selected="selected">Select Verse</option>
-                            </select>
+                            <div class="column">
+                                <label for="verse-option" id="verse-label">Verse</label><br>
+                                <select name="verse-option" id="verse-option">
+                                <option value="" selected="selected">Select Verse</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
