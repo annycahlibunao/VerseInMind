@@ -77,9 +77,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div id="cont-three-modal">
-                            <p id="passage-text"></p>
-                        </div>
+                        <div id="cont-three-modal"></div>
                     </div>
                 </div>
             </div>

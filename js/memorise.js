@@ -80,7 +80,10 @@ function fetchAPIData(passage) {
     return response.json();
   })
   .then(data => {
-    document.getElementById("passage-text").innerHTML = data.passages[0];
+    const passageDiv = document.getElementById("cont-three-modal");
+    passageDiv.innerHTML = data.passages[0];
+
+    passageDiv.querySelector('.audio').remove();
   })
   .catch(error => console.error('Error:', error));
 }
