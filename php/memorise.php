@@ -4,11 +4,10 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/memorise.css">
         <link rel="stylesheet" href="../css/nav.css">
-        <script src="../js/memorise.js" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/png" href="images/webicon.png">
+        <link rel="icon" type="image/png" href="../images/webicon.png">
         <title>VerseInMind</title>
     </head>
     <body>  
@@ -57,12 +56,26 @@
                             <h3 id="add-modal-title">Add A Verse</h3>
                         </div>
                         <div id="cont-two-modal">
-                            <p>Version</p>
-                            
+                            <label for="book-option">Book</label>
+                            <select name="book-option" id="book-option">
+                            <option value="" selected="selected">Select Book</option>
+                            </select>
+
+                            <label for="chapter-option">Chapter</label>
+                            <select name="chapter-option" id="chapter-option">
+                            <option value="" selected="selected">Select Chapter</option>
+                            </select>
+
+                            <label for="verse-option">Verse</label>
+                            <select name="verse-option" id="verse-option">
+                            <option value="" selected="selected">Select Verse</option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
+            <div id="bible-passage"></div>
         </main>
+        <script src="../js/memorise.js" defer></script>
     </body>
 </html>
