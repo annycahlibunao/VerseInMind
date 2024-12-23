@@ -1,32 +1,21 @@
-/** ESV API CODE **/
-function fetchAPIData() {
-  let passage = 'John 1:1';
-  const API_KEY = 'dbf725a931b6eb4bc5b9d4582e36f5cb78b1c6c7';
-  const API_URL = `https://api.esv.org/v3/passage/html/?q=${encodeURIComponent(passage)}`;
-
-  fetch(API_URL, {
-    headers: {
-      'Authorization': `Token ${API_KEY}`,
-    }
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error
-          (`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    //document.getElementById("test").innerText = `Verse: ${data.query}`;
-  })
-  .catch(error => console.error('Error:', error));
-}
-
-
 /** BIBLE SEARCH JSON CODE **/
 var bookSel = document.getElementById("book-option");
 var chapterSel = document.getElementById("chapter-option");
 var verseSel = document.getElementById("verse-option");
+var passageStr;
+
+function setDropdownValue() {
+  var bookValue = bookSel.value;
+  var chapterValue = chapterSel.value;
+  var verseValue = verseSel.value;
+
+  if (bookValue && chapterValue && verseValue) {
+    passageStr = [bookValue, chapterValue].join(' ');
+    passageStr = [passageStr, verseValue].join(':');
+
+    fetchAPIData(passageStr);
+  }
+}
 
 function fetchJSONData() {
   fetch("../json/bible.json")
@@ -49,6 +38,7 @@ function fetchJSONData() {
             for (var chapter in data[this.value]){
               chapterSel.options[chapterSel.options.length] = new Option(chapter, chapter);
             }
+            setDropdownValue();
           }
 
           // dynamically change verse dropdown when chapter is selected
@@ -58,16 +48,42 @@ function fetchJSONData() {
             for (let i = 1; i <= verseNums; i++) {
               verseSel.options[verseSel.options.length] = new Option(i, i);
             }
-            
+            setDropdownValue();
+          }
+
+          verseSel.onchange = function() {
+            setDropdownValue();
           }
       })  
       .catch((error) =>
           console.error("Unable to fetch data:", error));
-  
-  
 }
 
 fetchJSONData();
+
+
+/** ESV API CODE **/
+function fetchAPIData(passage) {
+  const API_KEY = 'dbf725a931b6eb4bc5b9d4582e36f5cb78b1c6c7';
+  const API_URL = `https://api.esv.org/v3/passage/html/?q=${encodeURIComponent(passage)}`;
+
+  fetch(API_URL, {
+    headers: {
+      'Authorization': `Token ${API_KEY}`,
+    }
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error
+          (`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    document.getElementById("passage-text").innerHTML = data.passages[0];
+  })
+  .catch(error => console.error('Error:', error));
+}
 
 /** MODAL CODE **/
 var addVerseModal = document.getElementById("add-verse-modal");
@@ -90,3 +106,4 @@ window.onclick = function(event) {
     addVerseModal.style.display = "none";
   }
 }
+
