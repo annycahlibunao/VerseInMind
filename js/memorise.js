@@ -61,6 +61,32 @@ function fetchJSONData() {
 
 fetchJSONData();
 
+/** SEND VERSE INFO TO PHP CODE **/
+function sendVerseData(verseName, verseText) {
+  var dataToSend = `verseName=${encodeURIComponent(verseName)}&verseText=${encodeURIComponent(verseText)}`;
+  var xhr = new XMLHttpRequest();
+
+  // create a new XMLHttpRequest object
+  xhr.open("POST", "memorise.php", true);
+  // specify the request method, PHP script url, and asynchronous
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.send(dataToSend);
+
+  xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+          // check if the request is complete
+          if (xhr.status === 200) {
+              // check if the request was successful
+              console.log(xhr.responseText);
+              // output the response from the PHP script
+              //document.getElementById("verse-collection").innerText = xhr.responseText; 
+          } else {
+              console.error("Error:", xhr.status);
+              // log an error if the request was unsuccessful
+          }
+      }
+  }
+}
 
 /** ESV API CODE **/
 function fetchAPIData(passage) {
@@ -83,7 +109,30 @@ function fetchAPIData(passage) {
     const passageDiv = document.getElementById("cont-three-modal");
     passageDiv.innerHTML = data.passages[0];
 
-    passageDiv.querySelector('.audio').remove();
+    console.log(data.passages[0]);
+    passageDiv.querySelectorAll('.footnotes, .audio').forEach(x => x.remove());
+
+    var buttonDiv = document.getElementById("cont-four-modal");
+    var confirmAddBtn = document.createElement("button");
+
+    confirmAddBtn.id = "confirm-add-btn";
+    confirmAddBtn.textContent = `Add ${data.query}`;
+
+    while(buttonDiv.firstChild){
+      buttonDiv.removeChild(buttonDiv.firstChild);
+    }
+    buttonDiv.appendChild(confirmAddBtn);
+
+    confirmAddBtn.onclick = function() {
+      let div = document.createElement("div");
+      div.innerHTML = data.passages[0];
+
+      div.querySelectorAll('.footnotes, .audio, h2, h3').forEach(x => x.remove());
+      var verseText = div.querySelector('p').textContent.replace(/^\d+\s+/, '').trim(); 
+ 
+      sendVerseData(data.query, verseText);
+      addVerseModal.style.display = "none";
+    }
   })
   .catch(error => console.error('Error:', error));
 }

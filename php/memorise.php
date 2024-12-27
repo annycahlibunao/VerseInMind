@@ -1,3 +1,45 @@
+<?php 
+    $conn = mysqli_connect("localhost", "root", "", "verseinmind_db");
+    if ($conn == FALSE) {
+        die ("Error connecting to mysql server: " . mysqli_connect_error());
+    }
+    
+
+    $cookie_email = isset($_COOKIE["cookie_email"]) ? $_COOKIE["cookie_email"] : "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["verseName"]) && isset($_POST["verseText"])) {
+        $verse_name = $_POST["verseName"];
+        $verse_text = $_POST["verseText"];
+        $verse_credits = "http://www.esv.org";
+        $current_time = date('Y-m-d H:i:s');
+
+        // get the user's id from users table
+        $user_id_query = "SELECT user_id FROM users WHERE email='$cookie_email'";
+        $user_id_result = mysqli_query($conn, $user_id_query);
+
+        if (!$user_id_result) {
+            die ("Error in getting the user's id.");
+        }
+
+        $row = mysqli_fetch_assoc($user_id_result);
+        $user_id = $row['user_id'];
+
+        if (!$user_id) {
+            die("No user found with the provided email.");
+        }
+
+        $add_verse_query = "INSERT INTO `verses` (`user_id`, `verse_name`, `verse_text`, `translation`
+        , `credits`, `created_at`) VALUES ('$user_id', '$verse_name', '$verse_text', 'ESV', '$verse_credits', '$current_time')";
+        $add_verse_result = mysqli_query($conn, $add_verse_query);
+
+        if (!$add_verse_query) {
+            die ("Error in inserting verse data");
+        }
+    }
+
+    mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -78,10 +120,11 @@
                             </div>
                         </div>
                         <div id="cont-three-modal"></div>
+                        <div id="cont-four-modal"></div>
                     </div>
                 </div>
             </div>
-            <div id="bible-passage"></div>
+            <div id="verse-collection"></div>
         </main>
         <script src="../js/memorise.js" defer></script>
     </body>

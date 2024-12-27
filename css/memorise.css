@@ -146,3 +146,31 @@ main {
     font-size: 1.5vw;
     margin-top: 2.5vw;
 }
+
+#cont-three-modal h3 {
+    font-size: 1.25vw;
+    font-weight: 400;
+}
+
+#cont-four-modal {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#confirm-add-btn {
+    font-family: "Lexend", sans-serif;
+    background-color: #ffa25c;
+    color: white;
+    border: none;
+    border-radius: 2.1vw;
+    padding: 1.3vw;
+    font-size: 1.1vw;
+    transition: 0.3s;
+    margin-top: 1.8vw;
+}
+
+#confirm-add-btn:hover {
+    background-color: #ff8529;
+}
+
+

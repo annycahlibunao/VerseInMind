@@ -14,10 +14,10 @@
             $email_input = $_GET["email"];
             $password_input = $_GET["password"];
 
-            setcookie("cookie_fname", $fname_input, time() + (60 * 60), "/");
-            setcookie("cookie_lname", $lname_input, time() + (60 * 60), "/");
-            setcookie("cookie_email", $email_input, time() + (60 * 60), "/");
-            setcookie("cookie_password", $password_input, time() + (60 * 60), "/");
+            setcookie("cookie_fname", $fname_input, time() + (10 * 365 * 24 * 60 * 60), "/");
+            setcookie("cookie_lname", $lname_input, time() + (10 * 365 * 24 * 60 * 60), "/");
+            setcookie("cookie_email", $email_input, time() + (10 * 365 * 24 * 60 * 60), "/");
+            setcookie("cookie_password", $password_input, time() + (10 * 365 * 24 * 60 * 60), "/");
 
             $signup_query = "INSERT INTO `users` (`first_name`, `last_name`, `email`, `password`) VALUES('$fname_input', '$lname_input', '$email_input', '$password_input') ";
             $signup_result = mysqli_query($conn, $signup_query);

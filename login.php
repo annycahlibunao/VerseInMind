@@ -1,9 +1,7 @@
 <?php 
-
     $cookie_email = isset($_COOKIE["cookie_email"]) ? $_COOKIE["cookie_email"] : "";
     $cookie_password = isset($_COOKIE["cookie_password"]) ? $_COOKIE["cookie_password"] : "";
     $error_msg = isset($_GET["error"]) ? $_GET["error"] : "";
-
 ?>
 
 <!DOCTYPE html>
