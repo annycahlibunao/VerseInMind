@@ -173,4 +173,11 @@ main {
     background-color: #ff8529;
 }
 
+#cont-two h2 {
+    margin-top: 3vw;
+    margin-left: 3.5vw;
+    font-weight: 500;
+    font-size: 2vw;
+}
+
 

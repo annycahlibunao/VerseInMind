@@ -28,6 +28,9 @@
         } else if ($check_form_type == "login"){
             $email_input = $_GET["email"];
             $password_input = $_GET["password"];
+
+            setcookie("cookie_email", $email_input, time() + (10 * 365 * 24 * 60 * 60), "/");
+            setcookie("cookie_password", $password_input, time() + (10 * 365 * 24 * 60 * 60), "/");
     
             $email_input_safe = mysqli_real_escape_string($conn, $email_input);
             $login_query = "SELECT user_id, password FROM users WHERE email='$email_input_safe'";

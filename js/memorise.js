@@ -78,6 +78,7 @@ function sendVerseData(verseName, verseText) {
           if (xhr.status === 200) {
               // check if the request was successful
               console.log(xhr.responseText);
+              location.reload();
               // output the response from the PHP script
               //document.getElementById("verse-collection").innerText = xhr.responseText; 
           } else {
@@ -127,7 +128,7 @@ function fetchAPIData(passage) {
       let div = document.createElement("div");
       div.innerHTML = data.passages[0];
 
-      div.querySelectorAll('.footnotes, .audio, h2, h3').forEach(x => x.remove());
+      div.querySelectorAll('.footnotes, .audio, h2, h3, b.chapter-num').forEach(x => x.remove());
       var verseText = div.querySelector('p').textContent.replace(/^\d+\s+/, '').trim(); 
  
       sendVerseData(data.query, verseText);

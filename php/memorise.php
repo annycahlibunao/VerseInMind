@@ -3,30 +3,28 @@
     if ($conn == FALSE) {
         die ("Error connecting to mysql server: " . mysqli_connect_error());
     }
-    
 
     $cookie_email = isset($_COOKIE["cookie_email"]) ? $_COOKIE["cookie_email"] : "";
+
+    $user_id_query = "SELECT user_id FROM users WHERE email='$cookie_email'";
+    $user_id_result = mysqli_query($conn, $user_id_query);
+
+    if (!$user_id_result) {
+        die ("Error in getting the user's id.");
+    }
+
+    $row = mysqli_fetch_assoc($user_id_result);
+    $user_id = $row['user_id'];
+
+    if (!$user_id) {
+        die("No user found with the provided email.");
+    }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["verseName"]) && isset($_POST["verseText"])) {
         $verse_name = $_POST["verseName"];
         $verse_text = $_POST["verseText"];
         $verse_credits = "http://www.esv.org";
         $current_time = date('Y-m-d H:i:s');
-
-        // get the user's id from users table
-        $user_id_query = "SELECT user_id FROM users WHERE email='$cookie_email'";
-        $user_id_result = mysqli_query($conn, $user_id_query);
-
-        if (!$user_id_result) {
-            die ("Error in getting the user's id.");
-        }
-
-        $row = mysqli_fetch_assoc($user_id_result);
-        $user_id = $row['user_id'];
-
-        if (!$user_id) {
-            die("No user found with the provided email.");
-        }
 
         $add_verse_query = "INSERT INTO `verses` (`user_id`, `verse_name`, `verse_text`, `translation`
         , `credits`, `created_at`) VALUES ('$user_id', '$verse_name', '$verse_text', 'ESV', '$verse_credits', '$current_time')";
@@ -36,8 +34,6 @@
             die ("Error in inserting verse data");
         }
     }
-
-    mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -124,7 +120,21 @@
                     </div>
                 </div>
             </div>
-            <div id="verse-collection"></div>
+            <div id="cont-two">
+                <h2>Verse Collection</h2>
+                <?php
+                    $get_verses_query = "SELECT * FROM verses WHERE user_id='$user_id'";
+                    $get_verses_result = mysqli_query($conn, $get_verses_query);
+                    while ($row = mysqli_fetch_assoc($get_verses_result)) {
+                        echo "<p>";
+                        echo $row['verse_name'] . " ";
+                        echo $passage = $row['verse_text'] . " ";
+                        echo "</p>";
+                    }
+
+                    mysqli_close($conn);
+                ?>
+            </div>
         </main>
         <script src="../js/memorise.js" defer></script>
     </body>
