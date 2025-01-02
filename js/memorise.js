@@ -138,7 +138,7 @@ function fetchAPIData(passage) {
   .catch(error => console.error('Error:', error));
 }
 
-/** MODAL CODE **/
+/** ADD VERSE MODAL CODE **/
 var addVerseModal = document.getElementById("add-verse-modal");
 var addVerseBtn = document.getElementById("add-verse-btn");
 var span = document.getElementsByClassName("close")[0];
