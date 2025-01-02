@@ -122,18 +122,28 @@
             </div>
             <div id="cont-two">
                 <h2>Verse Collection</h2>
-                <?php
-                    $get_verses_query = "SELECT * FROM verses WHERE user_id='$user_id'";
-                    $get_verses_result = mysqli_query($conn, $get_verses_query);
-                    while ($row = mysqli_fetch_assoc($get_verses_result)) {
-                        echo "<p>";
-                        echo $row['verse_name'] . " ";
-                        echo $passage = $row['verse_text'] . " ";
-                        echo "</p>";
-                    }
+                <div id="verse-collection"> 
+                    <table>
+                            <?php
+                                $get_verses_query = "SELECT * FROM verses WHERE user_id='$user_id'";
+                                $get_verses_result = mysqli_query($conn, $get_verses_query);
+                                while ($row = mysqli_fetch_assoc($get_verses_result)) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row['verse_name'] . "</td>";
+                                    echo "<td>" . $passage = $row['verse_text'] . "</td>";
+                                    echo "<td>";
+                                    echo "<div id='btn-cont'>";
+                                    echo "<button id='mem-verse-btn'>Memorise</button>";
+                                    echo "<button id='del-verse-btn'><svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#FFFFFF'><path d='M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z'/></svg></button>";
+                                    echo "</div";
+                                    echo "</td>";
+                                    echo "</tr>";
+                                }
 
-                    mysqli_close($conn);
-                ?>
+                                mysqli_close($conn);
+                            ?>
+                    </table>    
+                </div>
             </div>
         </main>
         <script src="../js/memorise.js" defer></script>
