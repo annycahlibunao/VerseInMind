@@ -157,6 +157,20 @@ span.onclick = function() {
 window.onclick = function(event) {
   if (event.target == addVerseModal) {
     addVerseModal.style.display = "none";
+  } 
+  if (event.target == memVerseModal) {
+    memVerseModal.style.display = "none";
   }
 }
+
+/** MEMORISE VERSE MODAL CODE **/
+var memVerseBtns = document.querySelectorAll(".mem-verse-btn");
+var memVerseModal = document.getElementById("mem-verse-modal");
+
+memVerseBtns.forEach(button => {
+  button.onclick = function() {
+    memVerseModal.style.display = "block";
+  };
+});
+
 

@@ -73,7 +73,7 @@ main {
 
 .modal-content {
     background-color: white;
-    margin: 10% auto; /* 15% from the top and centered */
+    margin: 7% auto; /* 15% from the top and centered */
     padding: 2vw;
     width: 50%; 
     border-radius: 1.5vw;
@@ -211,7 +211,7 @@ main {
     padding-left: 2.5vw;
 }
 
-#mem-verse-btn {
+.mem-verse-btn {
     font-family: "Lexend", sans-serif;
     background-color: #ffa25c;
     color: white;
@@ -223,7 +223,7 @@ main {
     cursor: pointer;
 }
 
-#mem-verse-btn:hover {
+.mem-verse-btn:hover {
     background-color: #ff8529;
 }
 
@@ -242,4 +242,18 @@ main {
 
 #del-verse-btn:hover {
     background-color: #dbdfe3;
+}
+
+.mode-btn-options {
+    width: 45%;
+    height: 25vw;
+    font-family: "Lexend", sans-serif;
+    border: none;
+    border-radius: 1vw;
+    margin-right: 1vw;
+}
+
+.mode-btn-options:hover {
+    background-color: #dbdfe3;
+
 }
