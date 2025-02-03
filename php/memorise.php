@@ -130,19 +130,13 @@
                                 while ($row = mysqli_fetch_assoc($get_verses_result)) {
                                     echo "<tr>";
                                     echo "<td>" . $row['verse_name'] . "</td>";
-                                    echo "<td>" . $passage = $row['verse_text'] . "</td>";
+                                    echo "<td>" . $row['verse_text'] . "</td>";
                                     echo "<td>";
                                     echo "<div id='btn-cont'>";
+                                    echo "<a href='practice.php?id=" . $row['verse_name'] . "'>" .
+                                        "<button class='mem-verse-btn'>Memorise</button>";
 
-                                    echo "<button class='mem-verse-btn'>Memorise</button>";
-                                    echo "<div id='mem-verse-modal' class='modal'>";
-                                    echo "<div class='modal-content'>";
-                                    echo "<button id='mode-one-btn'class='mode-btn-options'>full-write</button>";
-                                    echo "<button id='mode-two-btn'class='mode-btn-options'>coming soon</button>";
-                                    echo "</div>";
-                                    echo "</div>";
-
-                                    echo "<a href='deleteVerse.php?id=" . $row['verse_name'] . "&user=" . $user_id . "'>" .
+                                    echo "<a href='del-btn.php?id=" . $row['verse_name'] . "&user=" . $user_id . "'>" .
                                         "<button id='del-verse-btn'>" . 
                                         "<svg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='#FFFFFF'><path d='M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z'/></svg>" .
                                         "</button>";
@@ -150,7 +144,6 @@
                                     echo "</td>";
                                     echo "</tr>";
                                 }
-
                                 mysqli_close($conn);
                             ?>
                     </table>    

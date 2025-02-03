@@ -1,0 +1,50 @@
+html {
+    font-family: "Lexend", sans-serif;
+}
+
+
+#return-btn {
+    background-color: white;
+    padding: 1vw;
+    border-radius: 3vw;
+    border: none;
+    height: 5vw;
+    width: 5vw;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-left: 2vw;
+    margin-top: 2vw;
+    svg {
+        fill: #979ea9;
+    }
+}
+
+#return-btn:hover {
+    background-color: #eaeff5;
+}
+
+#cont-one {
+    margin-left: 20vw;
+    margin-top: 2vw;
+}
+
+#cont-one h1 {
+    font-size: 3vw;
+    font-weight: 600;
+}
+
+#sub-title-cont h3 {
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: #a2a19f;
+}
+
+#sub-title-cont {
+    display: flex;
+    align-items: center;
+    gap: 0.9vw;
+    margin-bottom: -2.2vw;
+    svg {
+        fill: #a2a19f;
+    }
+}

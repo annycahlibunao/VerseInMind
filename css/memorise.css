@@ -73,7 +73,7 @@ main {
 
 .modal-content {
     background-color: white;
-    margin: 7% auto; /* 15% from the top and centered */
+    margin: 5% auto; /* 15% from the top and centered */
     padding: 2vw;
     width: 50%; 
     border-radius: 1.5vw;
@@ -194,7 +194,7 @@ main {
 }
 
 #verse-collection td:nth-child(1) {
-    width: 15%; 
+    width: 10%; 
 }
 
 #verse-collection td:nth-child(2) {
@@ -242,18 +242,4 @@ main {
 
 #del-verse-btn:hover {
     background-color: #dbdfe3;
-}
-
-.mode-btn-options {
-    width: 45%;
-    height: 25vw;
-    font-family: "Lexend", sans-serif;
-    border: none;
-    border-radius: 1vw;
-    margin-right: 1vw;
-}
-
-.mode-btn-options:hover {
-    background-color: #dbdfe3;
-
 }
