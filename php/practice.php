@@ -37,6 +37,10 @@
             <h3>Rewrite the verse below</h3>
         </div>
         <h1><?php echo $verse_name; ?></h1> 
+
+        <form>
+            <textarea id="rewrite-ans-field" name="rewrite-ans" placeholder="Enter your answer here"></textarea>
+        </form>
     </div>
     </body>
 </html>
